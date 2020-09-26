@@ -5,11 +5,11 @@ import org.springframework.context.ApplicationEvent;
 
 
 @Getter
-public class AuditEvent extends ApplicationEvent {
-    private final LogData data;
+public class AuditEvent<T> extends ApplicationEvent {
+    private final T data;
 
-    public AuditEvent(Object source, LogData data) {
-        super(source);
+    public AuditEvent(T data) {
+        super(data);
         this.data = data;
     }
 }
