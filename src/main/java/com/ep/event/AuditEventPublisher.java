@@ -23,6 +23,6 @@ public class AuditEventPublisher implements ApplicationEventPublisherAware {
         data.put("message", message);
 
 
-        applicationEventPublisher.publishEvent(new AuditEvent(this, LogData.builder().dataMap(data).build()));
+        applicationEventPublisher.publishEvent(new AuditEvent<LogData>(LogData.builder().dataMap(data).build()));
     }
 }
